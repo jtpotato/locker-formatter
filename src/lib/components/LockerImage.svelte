@@ -43,15 +43,13 @@
 	};
 
 	let aspect = 1;
-	let cropSize = { width: 0, height: 0 };
 
 	// preserve aspect ratio
 	const originalImg = new Image();
 	originalImg.src = src;
+
 	originalImg.onload = () => {
 		aspect = originalImg.width / originalImg.height;
-		cropSize = { width: originalImg.width, height: originalImg.height };
-		console.log(cropSize);
 	};
 </script>
 
