@@ -1,3 +1,5 @@
+<img src="static/favicon.png" width="32" style="float:left; margin-right:1em" />
+
 # locker-formatter
 
 ![alt text](docs/image.webp)
