@@ -55,7 +55,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class="m-1 relative mb-2"
+	class="relative m-1 mb-2"
 	on:mouseenter={() => (isHovered = true)}
 	on:mouseleave={() => (isHovered = false)}
 >
@@ -63,7 +63,7 @@
 	{#if isHovered && !isCropping}
 		<div class="absolute top-0 p-1">
 			<button
-				class="bg-black/70 rounded-full p-2 text-white border border-white/10 hover:bg-neutral-700"
+				class="rounded-full border border-white/10 bg-black/70 p-2 text-white hover:bg-neutral-700"
 				on:click={handleStartCrop}
 			>
 				<IconCrop />

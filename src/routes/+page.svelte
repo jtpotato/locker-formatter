@@ -15,8 +15,8 @@
 </script>
 
 {#if images.length == 0}
-	<div class="p-4 min-h-screen flex items-center justify-center flex-col gap-8">
-		<h1 class="font-bold text-8xl text-orange-400">Locker Formatter</h1>
+	<div class="flex min-h-screen flex-col items-center justify-center gap-8 p-4">
+		<h1 class="text-8xl font-bold text-orange-400">Locker Formatter</h1>
 		<input type="file" accept="image/*" multiple bind:this={fileInput} on:change={handleFiles} />
 	</div>
 {/if}
