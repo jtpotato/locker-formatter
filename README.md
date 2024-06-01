@@ -1,9 +1,7 @@
-<img src="static/favicon.png" width="32" style="float:left; margin-right:1em" />
-
-# locker-formatter
-
-![alt text](docs/image.webp)
+<img src="docs/Title.png" />
 
 Because sometimes you need to put a bunch of photos in a sort-of-organised grid pattern.
+
+![alt text](docs/image.webp)
 
 Supports cropping of individual photos.
