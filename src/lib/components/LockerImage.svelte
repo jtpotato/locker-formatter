@@ -1,7 +1,6 @@
 <script lang="ts">
 	import getCroppedImg from '$lib/crop';
 	import Cropper from 'svelte-easy-crop';
-	import type { KeyboardEventHandler } from 'svelte/elements';
 	import IconCrop from '~icons/carbon/crop';
 
 	export let src: string;
