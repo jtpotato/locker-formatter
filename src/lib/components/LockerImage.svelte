@@ -54,7 +54,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class="relative m-1 mb-2"
+	class="relative m-1 mb-2 mt-0"
 	on:mouseenter={() => (isHovered = true)}
 	on:mouseleave={() => (isHovered = false)}
 >
