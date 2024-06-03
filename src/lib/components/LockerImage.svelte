@@ -70,7 +70,7 @@
 	on:mouseleave={() => (isHovered = false)}
 	title={filename}
 >
-	<img src={workingSrc} alt="" />
+	<img src={workingSrc} alt="" class="w-full" />
 	{#if isHovered && !isCropping}
 		<div class="absolute top-0 p-1">
 			<button
