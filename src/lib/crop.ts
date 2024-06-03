@@ -5,6 +5,10 @@ export default async function getCroppedImg(
 	const image = new Image();
 	image.src = imageSrc;
 
+	await new Promise((resolve) => {
+		image.onload = resolve;
+	});
+
 	const canvas = document.createElement('canvas');
 	const ctx = canvas.getContext('2d');
 

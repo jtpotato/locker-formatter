@@ -1,10 +1,13 @@
 <script lang="ts">
 	import getCroppedImg from '$lib/crop';
+	import getSavedCrop, { saveCrop } from '$lib/save';
 	import Cropper from 'svelte-easy-crop';
 	import IconCrop from '~icons/carbon/crop';
 
 	export let src: string;
-	let workingSrc = src;
+	export let filename: string;
+
+	let workingSrc = '';
 
 	let isHovered = false;
 	let isCropping = false;
@@ -20,6 +23,7 @@
 			// use canvas to resize the image.
 			try {
 				const result = await getCroppedImg(src, cropResult);
+				await saveCrop(filename, cropResult);
 				if (result) {
 					workingSrc = result;
 				}
@@ -50,6 +54,13 @@
 	originalImg.onload = () => {
 		aspect = originalImg.width / originalImg.height;
 	};
+
+	// get saved crop
+	getSavedCrop(src, filename).then((savedCrop) => {
+		if (savedCrop) {
+			workingSrc = savedCrop;
+		}
+	});
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -57,6 +68,7 @@
 	class="relative m-1 mb-2 mt-0"
 	on:mouseenter={() => (isHovered = true)}
 	on:mouseleave={() => (isHovered = false)}
+	title={filename}
 >
 	<img src={workingSrc} alt="" />
 	{#if isHovered && !isCropping}

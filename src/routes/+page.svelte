@@ -3,14 +3,14 @@
 
 	let fileInput: HTMLInputElement;
 
-	let images: string[] = [];
+	let images: Array<Array<string>> = [];
 
 	const handleFiles = () => {
 		if (!fileInput.files) return;
 		const imageFiles = Array.from(fileInput.files);
-		images = imageFiles.map((file) => URL.createObjectURL(file));
+		images = imageFiles.map((file) => [URL.createObjectURL(file), file.name]);
 
-		console.log(images);
+		// console.log(images);
 	};
 </script>
 
@@ -32,6 +32,6 @@
 
 <div class="columns-4 gap-0 p-1">
 	{#each images as image}
-		<LockerImage src={image} />
+		<LockerImage src={image[0]} filename={image[1]} />
 	{/each}
 </div>
