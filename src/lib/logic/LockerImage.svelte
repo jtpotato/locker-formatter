@@ -1,6 +1,6 @@
 <script lang="ts">
-	import getCroppedImg from '$lib/crop';
-	import getSavedCrop, { saveCrop } from '$lib/save';
+	import getCroppedImg from '$lib/logic/crop';
+	import getSavedCrop, { saveCrop } from '$lib/logic/save';
 	import Cropper from 'svelte-easy-crop';
 	import IconCrop from '~icons/carbon/crop';
 

@@ -38,6 +38,9 @@
   },
   "type": "module",
   "dependencies": {
-    "svelte-easy-crop": "^2.0.3"
+    "clsx": "^2.1.1",
+    "svelte-easy-crop": "^2.0.3",
+    "tailwind-merge": "^2.3.0",
+    "tailwind-variants": "^0.2.1"
   }
 }

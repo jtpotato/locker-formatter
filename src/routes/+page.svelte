@@ -1,11 +1,14 @@
 <script lang="ts">
-	import LockerImage from '$lib/components/LockerImage.svelte';
+	import type { FormInputEvent } from '$lib/components/ui/input';
+	import Input from '$lib/components/ui/input/input.svelte';
+	import LockerImage from '$lib/logic/LockerImage.svelte';
 
 	let fileInput: HTMLInputElement;
 
 	let images: Array<Array<string>> = [];
 
-	const handleFiles = () => {
+	const handleFiles = (e: FormInputEvent) => {
+		let fileInput = e.target as HTMLInputElement;
 		if (!fileInput.files) return;
 		const imageFiles = Array.from(fileInput.files);
 		images = imageFiles.map((file) => [URL.createObjectURL(file), file.name]);
@@ -17,18 +20,16 @@
 <title>Locker Formatter</title>
 
 {#if images.length == 0}
-	<div class="flex min-h-screen flex-col items-center justify-center gap-8 p-4">
+	<div class="flex min-h-screen flex-col items-center justify-center">
 		<h1 class="text-magenta-400 mb-16 w-full py-2 text-center text-8xl font-bold text-fuchsia-900">
 			Locker Formatter
 		</h1>
-		<input
-			type="file"
-			accept="image/*"
-			multiple
-			bind:this={fileInput}
-			on:change={handleFiles}
-			class="file:bg-fuschia-800 file:mr-4 file:cursor-pointer file:rounded-lg file:border-none file:bg-fuchsia-900 file:px-4 file:py-2 file:text-white"
-		/>
+		<div class="max-w-2xl">
+			<Input type="file" accept="image/*" multiple on:change={handleFiles} />
+		</div>
+	</div>
+	<div class="p-4 px-8 opacity-50">
+		<p>Made with ❤️ and 🧋 - Joel Tan</p>
 	</div>
 {/if}
 
