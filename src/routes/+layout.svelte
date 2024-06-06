@@ -9,7 +9,7 @@
 		property="og:description"
 		content="For when you need to crop and print a bunch of images."
 	/>
-	<meta property="og:image" content="{base}/banner.webp" />
+	<meta property="og:image" content="https://jtpotato.github.io/locker-formatter/banner.webp" />
 	<meta property="og:locale" content="en_AU" />
 </svelte:head>
 
