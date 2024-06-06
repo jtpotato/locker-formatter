@@ -1,4 +1,4 @@
-<img src="docs/Title.png" />
+<img src="static/banner.webp" />
 
 Because sometimes you need to put a bunch of photos in a sort-of-organised grid pattern.
 
